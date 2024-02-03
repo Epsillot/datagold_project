@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.db.models import Sum
-
+from django.db.models import Avg
 from datagold.models import Client, Collecte
 from datagold.serializers import CollecteSerializer, ClientSerializer
 
@@ -22,12 +22,19 @@ class PanierSocioProAPIView(APIView):
     def get(self, *args, **kwargs):
         # Requête pour obtenir la somme de "prix_panier_client" par "categorie_socioprofessionnelle"
         result = (
-            Client.objects.values('categorie_socioprofessionnelle')
+            Client.objects.values('categorie_socioprofessionnelle' , 'date')
             .annotate(somme_prix_panier_total=Sum('prix_panier_client'))
-            .order_by('categorie_socioprofessionnelle')
+            .order_by('categorie_socioprofessionnelle', 'date')
         )
+        return Response(result)
 
-        # Afficher le résultat JSON
-        print(result)
 
+class DepenseMoyennePanierAPIView(APIView):
+    def get(self, *args, **kwargs):
+        # Requête pour obtenir la dépense moyenne du panier par "categorie_socioprofessionnelle"
+        result = (
+            Client.objects.values('categorie_socioprofessionnelle', 'date')
+            .annotate(depense_moyenne_panier=Avg('prix_panier_client'))
+            .order_by('categorie_socioprofessionnelle', 'date')
+        )
         return Response(result)

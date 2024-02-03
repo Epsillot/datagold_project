@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0f6146d-5865-4244-93a5-9b1cce06c958" name="Changes" comment="Initial Commit API Client - Base backend - et - fontend">
-      <change afterPath="$PROJECT_DIR$/random_data_generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datagold/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datagold/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datagold/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datagold/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goldenlineProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/goldenlineProject/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/goldenlineProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/goldenlineProject/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +107,7 @@
       <option name="presentableId" value="Default" />
       <updated>1706951226853</updated>
       <workItem from="1706951251945" duration="821000" />
-      <workItem from="1706952274384" duration="43674000" />
+      <workItem from="1706952274384" duration="45739000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit API Client - Base backend - et - fontend">
       <option name="closed" value="true" />
@@ -122,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706967135501</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial Commit API Client - Base backend - et - fontend">
+      <option name="closed" value="true" />
+      <created>1707001352625</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707001352625</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

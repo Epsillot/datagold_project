@@ -4,28 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0f6146d-5865-4244-93a5-9b1cce06c958" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/goldenlineProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/goldenlineProject/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/goldenlineProject/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/goldenlineProject/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/goldenlineProject/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/goldenlineProject/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+    <list default="true" id="c0f6146d-5865-4244-93a5-9b1cce06c958" name="Changes" comment="Initial Commit API Client - Base backend - et - fontend">
+      <change afterPath="$PROJECT_DIR$/random_data_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datagold/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datagold/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datagold/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datagold/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goldenlineProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/goldenlineProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goldenlineProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/goldenlineProject/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="package.json" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -74,6 +61,14 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="goldenlineProject" type="Python.DjangoServer" factoryName="Django server">
       <module name="goldenlineProject" />
@@ -117,11 +112,24 @@
       <option name="presentableId" value="Default" />
       <updated>1706951226853</updated>
       <workItem from="1706951251945" duration="821000" />
-      <workItem from="1706952274384" duration="12411000" />
+      <workItem from="1706952274384" duration="43674000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit API Client - Base backend - et - fontend">
+      <option name="closed" value="true" />
+      <created>1706967135501</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706967135501</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit API Client - Base backend - et - fontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit API Client - Base backend - et - fontend" />
   </component>
 </project>

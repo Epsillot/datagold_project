@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from datagold.models import Client, Collecte, Categorie, DetailCollecte
+from datagold.models import Client, Collecte
 
 class ClientSerializer(ModelSerializer):
     class Meta:
@@ -14,13 +14,3 @@ class CollecteSerializer:
         fields = '__all__'
 
 
-class CategorieSerializer:
-    class Meta:
-        model = Categorie
-        fields = '__all__'
-
-
-class DetailCollecteSerializer:
-    class Meta:
-        model = DetailCollecte
-        fields = '__all__'

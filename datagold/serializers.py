@@ -1,12 +1,12 @@
+from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer
 
 from datagold.models import Client, Collecte
 
-class ClientSerializer(ModelSerializer):
-    class Meta:
-        model = Client
-        fields = '__all__'
-
+class ClientSerializer(serializers.Serializer):
+    categorie_socioprofessionnelle = serializers.CharField()
+    date = serializers.DateField()
+    prix_panier_client = serializers.FloatField()
 
 class CollecteSerializer:
     class Meta:

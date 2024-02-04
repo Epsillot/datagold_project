@@ -13,7 +13,7 @@ class Collecte(models.Model):
 
 class Client(models.Model):
     client_anonym = models.CharField(null=True, max_length=255)
-    nombre_enfants = models.IntegerField()
+    nombre_enfants = models.IntegerField(null=True)
     categorie_socioprofessionnelle = models.CharField(max_length=255)
     prix_panier_client = models.DecimalField(max_digits=10, decimal_places=2)
     date = models.DateField(auto_now_add=True)

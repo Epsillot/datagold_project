@@ -1,9 +1,15 @@
+from django.shortcuts import render
+from django.http import HttpResponse
 from rest_framework.views import APIView
+from django.template import loader
 from rest_framework.response import Response
 from django.db.models import Sum
 from datagold.models import Client, Collecte
 from datagold.serializers import CollecteSerializer, ClientSerializer
 import pandas as pd
+import requests
+
+
 
 class ClientAPIView(APIView):
     def get(self, *args, **kwargs):
@@ -16,6 +22,7 @@ class ClientAPIView(APIView):
         # Afficher le résultat JSON
         return Response(result_json)
 
+
 class CollecteAPIView(APIView):
     def get(self, *args, **kwargs):
         collectes = Collecte.objects.all()
@@ -27,12 +34,14 @@ class CollecteAPIView(APIView):
         # Afficher le résultat JSON
         return Response(result_json)
 
-from django.http import JsonResponse
+
+from django.http import JsonResponse, request
 from django.db.models import Sum
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Client
 from .serializers import ClientSerializer
+
 
 class PanierSocioProAPIView(APIView):
     def get(self, *args, **kwargs):
@@ -56,8 +65,6 @@ class PanierSocioProAPIView(APIView):
 
         # Afficher le résultat JSON
         return Response(serializer.data)
-
-
 
 
 class DepenseMoyennePanierAPIView(APIView):
@@ -88,5 +95,22 @@ class DepenseMoyennePanierAPIView(APIView):
         return Response(serializer.data)
 
 
+def Accueil(request):
+    # Faire une requête GET vers votre API
+    api_url = "http://localhost:8000/api/sociopro/"  # Remplacez cela par l'URL réelle de votre API
+    response = requests.get(api_url)
 
+    # Vérifier si la requête a réussi (code 200 OK)
+    if response.status_code == 200:
+        # Récupérer les données JSON de la réponse
+        api_data = response.json()
 
+        # Extraire les labels et les données du JSON
+        labels = [entry['categorie_socioprofessionnelle'] for entry in api_data]
+        data = [entry['prix_panier_client'] for entry in api_data]
+
+        # Reste du code pour le rendu dans votre template
+        return render(request, "index.html", {'labels': labels, 'data': data})
+    else:
+        # Gérer les erreurs de requête si nécessaire
+        return HttpResponse(f"Erreur de requête vers l'API: {response.status_code}", status=response.status_code)

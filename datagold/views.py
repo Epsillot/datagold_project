@@ -95,10 +95,12 @@ class DepenseMoyennePanierAPIView(APIView):
         return Response(serializer.data)
 
 
+
 def Accueil(request):
     # Faire une requête GET vers votre API
     api_url = "http://localhost:8000/api/sociopro/"  # Remplacez cela par l'URL réelle de votre API
     response = requests.get(api_url)
+
 
     # Vérifier si la requête a réussi (code 200 OK)
     if response.status_code == 200:
@@ -114,3 +116,23 @@ def Accueil(request):
     else:
         # Gérer les erreurs de requête si nécessaire
         return HttpResponse(f"Erreur de requête vers l'API: {response.status_code}", status=response.status_code)
+
+def Moyenne(request):
+    api_url = "http://localhost:8000/api/sociopromoyenne/"  # Remplacez cela par l'URL réelle de votre API
+    response = requests.get(api_url)
+        # Vérifier si la requête a réussi (code 200 OK)
+    if response.status_code == 200:
+        # Récupérer les données JSON de la réponse
+        api_data = response.json()
+
+        # Extraire les labels et les données du JSON
+        labels = [entry['categorie_socioprofessionnelle'] for entry in api_data]
+        data = [entry['prix_panier_client'] for entry in api_data]
+
+        # Renvoyer les données au format JSON
+        return JsonResponse({'labels': labels, 'data': data})
+    else:
+        # Gérer les erreurs de requête si nécessaire
+        return JsonResponse({'error': f"Erreur de requête vers l'API: {response.status_code}"}, status=500)
+
+

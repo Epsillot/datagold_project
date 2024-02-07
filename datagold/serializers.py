@@ -8,7 +8,7 @@ class ClientSerializer(serializers.Serializer):
     date = serializers.DateField()
     prix_panier_client = serializers.FloatField()
 
-class CollecteSerializer:
+class CollecteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Collecte
         fields = '__all__'

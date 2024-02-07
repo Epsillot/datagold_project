@@ -4,11 +4,13 @@ from rest_framework.views import APIView
 from django.template import loader
 from rest_framework.response import Response
 from django.db.models import Sum
+from django.http import JsonResponse
 from datagold.models import Client, Collecte
 from datagold.serializers import CollecteSerializer, ClientSerializer
 import pandas as pd
 import requests
-
+import csv
+from rest_framework.decorators import action
 
 
 class ClientAPIView(APIView):
@@ -23,24 +25,28 @@ class ClientAPIView(APIView):
         return Response(result_json)
 
 
+
 class CollecteAPIView(APIView):
-    def get(self, *args, **kwargs):
-        collectes = Collecte.objects.all()
-        serializer = CollecteSerializer(collectes, many=True)
 
-        # Convertir le résultat en JSON
-        result_json = serializer.data
+    def get(self, request):
+        # Récupérer le nombre de lignes à exporter depuis les paramètres GET
+        number_of_rows = int(request.GET.get('numberOfRows', 10))
 
-        # Afficher le résultat JSON
-        return Response(result_json)
+        # Récupérer les données correspondantes de la base de données
+        collectes = Collecte.objects.all()[:number_of_rows]
 
+        # Créer un objet HttpResponse avec le type MIME CSV
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="collectes.csv"'
 
-from django.http import JsonResponse, request
-from django.db.models import Sum
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from .models import Client
-from .serializers import ClientSerializer
+        # Créer un écrivain CSV et écrire les données dans la réponse HTTP
+        writer = csv.writer(response)
+        writer.writerow(['collecte', 'categorie_article', 'prix_article'])  # Entêtes de colonnes
+        for collecte in collectes:
+            writer.writerow([collecte.collecte, collecte.categorie_article, collecte.prix_article])  # Données de chaque ligne
+
+        return response
+
 
 
 class PanierSocioProAPIView(APIView):

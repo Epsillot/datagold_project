@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0f6146d-5865-4244-93a5-9b1cce06c958" name="Changes" comment="Initial Commit API Client - Base backend - et - fontend">
+      <change afterPath="$PROJECT_DIR$/authentication/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/js/exp_csv_collect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/js/moy_sociopro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/js/panier_sociopro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/authentication/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/authentication/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datagold/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datagold/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goldenlineProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/goldenlineProject/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/goldenlineProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/goldenlineProject/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
@@ -23,9 +29,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="JavaScript File" />
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -66,7 +72,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/jmba/PycharmProjects/goldenlineProject/templates&quot;,
@@ -85,9 +91,11 @@
       <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\templates\authentication" />
+      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\authentication" />
+      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\authentication\template" />
+      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\templates" />
       <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\datagold" />
-      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject" />
-      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\goldenlineProject\static" />
     </key>
   </component>
   <component name="RunManager">
@@ -138,7 +146,9 @@
       <workItem from="1707080490449" duration="12231000" />
       <workItem from="1707164625077" duration="14803000" />
       <workItem from="1707209583842" duration="4151000" />
-      <workItem from="1707269218222" duration="1008000" />
+      <workItem from="1707269218222" duration="8889000" />
+      <workItem from="1707331616085" duration="9475000" />
+      <workItem from="1707474424618" duration="11554000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit API Client - Base backend - et - fontend">
       <option name="closed" value="true" />
@@ -204,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707178854006</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Initial Commit API Client - Base backend - et - fontend">
+      <option name="closed" value="true" />
+      <created>1707270291026</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1707270291027</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -104,7 +104,7 @@ class DepenseMoyennePanierAPIView(APIView):
 
 def Accueil(request):
     # Faire une requête GET vers votre API
-    api_url = "http://localhost:8000/api/sociopro/"  # Remplacez cela par l'URL réelle de votre API
+    api_url = "http://localhost:8000/api/sociopro/"  # URL  API
     response = requests.get(api_url)
 
 
@@ -124,7 +124,7 @@ def Accueil(request):
         return HttpResponse(f"Erreur de requête vers l'API: {response.status_code}", status=response.status_code)
 
 def Moyenne(request):
-    api_url = "http://localhost:8000/api/sociopromoyenne/"  # Remplacez cela par l'URL réelle de votre API
+    api_url = "http://localhost:8000/api/sociopromoyenne/"  # URL  API
     response = requests.get(api_url)
         # Vérifier si la requête a réussi (code 200 OK)
     if response.status_code == 200:

@@ -1,19 +1,23 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from rest_framework.views import APIView
-from django.template import loader
-from rest_framework.response import Response
-from django.db.models import Sum
-from django.http import JsonResponse
-from datagold.models import Client, Collecte
-from datagold.serializers import CollecteSerializer, ClientSerializer
+import csv
+
 import pandas as pd
 import requests
-import csv
-from rest_framework.decorators import action
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+from django.http import JsonResponse
+from django.shortcuts import render
+from rest_framework.permissions import DjangoObjectPermissions
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
+from datagold.models import Client, Collecte
+from datagold.serializers import ClientSerializer
+from rest_framework.permissions import DjangoModelPermissions
+from django.http import HttpRequest
 
 class ClientAPIView(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, *args, **kwargs):
         clients = Client.objects.all()
         serializer = ClientSerializer(clients, many=True)
@@ -25,8 +29,8 @@ class ClientAPIView(APIView):
         return Response(result_json)
 
 
-
 class CollecteAPIView(APIView):
+    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         # Récupérer le nombre de lignes à exporter depuis les paramètres GET
@@ -43,13 +47,14 @@ class CollecteAPIView(APIView):
         writer = csv.writer(response)
         writer.writerow(['collecte', 'categorie_article', 'prix_article'])  # Entêtes de colonnes
         for collecte in collectes:
-            writer.writerow([collecte.collecte, collecte.categorie_article, collecte.prix_article])  # Données de chaque ligne
+            writer.writerow(
+                [collecte.collecte, collecte.categorie_article, collecte.prix_article])  # Données de chaque ligne
 
         return response
 
 
-
 class PanierSocioProAPIView(APIView):
+    #permission_classes = [IsAuthenticated]
     def get(self, *args, **kwargs):
         # Requête pour obtenir les données
         queryset = Client.objects.values('categorie_socioprofessionnelle', 'date', 'prix_panier_client')
@@ -74,6 +79,7 @@ class PanierSocioProAPIView(APIView):
 
 
 class DepenseMoyennePanierAPIView(APIView):
+    # permission_classes = [IsAuthenticated]
     def get(self, *args, **kwargs):
         # Requête pour obtenir les données
         queryset = Client.objects.values('categorie_socioprofessionnelle', 'date', 'prix_panier_client')
@@ -101,17 +107,26 @@ class DepenseMoyennePanierAPIView(APIView):
         return Response(serializer.data)
 
 
-
+@login_required
 def Accueil(request):
-    # Faire une requête GET vers votre API
-    api_url = "http://localhost:8000/api/sociopro/"  # URL  API
-    response = requests.get(api_url)
+    # Créer un objet Request factice
+    fake_request = HttpRequest()
+    fake_request.method = 'GET'
+    fake_request.user = request.user  # Si vous avez besoin de l'utilisateur authentifié
 
+    # Instancier la vue PanierSocioProAPIView
+    view = PanierSocioProAPIView()
 
-    # Vérifier si la requête a réussi (code 200 OK)
+    # Assigner l'objet Request factice à la vue
+    view.request = fake_request
+
+    # Appeler la méthode get de la vue
+    response = view.get(fake_request)
+
+    # Vérifier si la réponse est un objet Response valide
     if response.status_code == 200:
         # Récupérer les données JSON de la réponse
-        api_data = response.json()
+        api_data = response.data
 
         # Extraire les labels et les données du JSON
         labels = [entry['categorie_socioprofessionnelle'] for entry in api_data]
@@ -123,13 +138,26 @@ def Accueil(request):
         # Gérer les erreurs de requête si nécessaire
         return HttpResponse(f"Erreur de requête vers l'API: {response.status_code}", status=response.status_code)
 
+@login_required
 def Moyenne(request):
-    api_url = "http://localhost:8000/api/sociopromoyenne/"  # URL  API
-    response = requests.get(api_url)
-        # Vérifier si la requête a réussi (code 200 OK)
+    # Créer un objet Request factice
+    fake_request = HttpRequest()
+    fake_request.method = 'GET'
+    fake_request.user = request.user  # Si vous avez besoin de l'utilisateur authentifié
+
+    # Instancier la vue DepenseMoyennePanierAPIView
+    view = DepenseMoyennePanierAPIView()
+
+    # Assigner l'objet Request factice à la vue
+    view.request = fake_request
+
+    # Appeler la méthode get de la vue
+    response = view.get(fake_request)
+
+    # Vérifier si la réponse est un objet Response valide
     if response.status_code == 200:
         # Récupérer les données JSON de la réponse
-        api_data = response.json()
+        api_data = response.data
 
         # Extraire les labels et les données du JSON
         labels = [entry['categorie_socioprofessionnelle'] for entry in api_data]
@@ -140,5 +168,3 @@ def Moyenne(request):
     else:
         # Gérer les erreurs de requête si nécessaire
         return JsonResponse({'error': f"Erreur de requête vers l'API: {response.status_code}"}, status=500)
-
-

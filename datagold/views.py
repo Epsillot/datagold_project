@@ -1,24 +1,58 @@
 import csv
-
 import pandas as pd
-import requests
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpRequest
 from django.shortcuts import render
-from rest_framework.permissions import DjangoObjectPermissions
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
 from datagold.models import Client, Collecte
 from datagold.serializers import ClientSerializer
-from rest_framework.permissions import DjangoModelPermissions
-from django.http import HttpRequest
+
+def custom_page_not_found(request, exception):
+    """
+    Renvoie une page d'erreur 404 personnalisée.
+
+    Args:
+        request: L'objet HttpRequest.
+        exception: L'exception qui a déclenché l'erreur.
+
+    Returns:
+        Un objet HttpResponse avec le contenu de la page d'erreur 404.
+    """
+    return render(request, '404.html', status=404)
+
+def custom_server_error(request):
+    """
+    Renvoie une page d'erreur 500 personnalisée.
+
+    Args:
+        request: L'objet HttpRequest.
+
+    Returns:
+        Un objet HttpResponse avec le contenu de la page d'erreur 500.
+    """
+    return render(request, '500.html', status=500)
 
 class ClientAPIView(APIView):
+    """
+    Vue API pour récupérer les clients.
+
+    Cette vue permet de récupérer tous les clients de la base de données
+    et de les sérialiser en JSON.
+
+    Attributes:
+        permission_classes (list): Les classes de permission requises pour accéder à cette API.
+    """
     permission_classes = [IsAuthenticated]
+
     def get(self, *args, **kwargs):
+        """
+        Méthode pour la gestion des requêtes GET.
+
+        Returns:
+            Un objet Response contenant les données JSON des clients.
+        """
         clients = Client.objects.all()
         serializer = ClientSerializer(clients, many=True)
 
@@ -28,11 +62,28 @@ class ClientAPIView(APIView):
         # Afficher le résultat JSON
         return Response(result_json)
 
-
 class CollecteAPIView(APIView):
+    """
+    Vue API pour exporter les données de collecte au format CSV.
+
+    Cette vue permet de récupérer les données de collecte de la base de données
+    et de les exporter au format CSV.
+
+    Attributes:
+        permission_classes (list): Les classes de permission requises pour accéder à cette API.
+    """
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
+        """
+        Méthode pour la gestion des requêtes GET.
+
+        Args:
+            request: L'objet HttpRequest.
+
+        Returns:
+            Un objet HttpResponse avec les données de collecte exportées au format CSV.
+        """
         # Récupérer le nombre de lignes à exporter depuis les paramètres GET
         number_of_rows = int(request.GET.get('numberOfRows', 10))
 
@@ -52,10 +103,25 @@ class CollecteAPIView(APIView):
 
         return response
 
-
 class PanierSocioProAPIView(APIView):
+    """
+    Vue API pour calculer le prix moyen du panier par catégorie socio-professionnelle.
+
+    Cette vue permet de récupérer les données de transaction des clients,
+    de les traiter à l'aide de Pandas et de renvoyer le résultat au format JSON.
+
+    Attributes:
+        permission_classes (list): Les classes de permission requises pour accéder à cette API.
+    """
     #permission_classes = [IsAuthenticated]
+
     def get(self, *args, **kwargs):
+        """
+        Méthode pour la gestion des requêtes GET.
+
+        Returns:
+            Un objet Response contenant les données JSON du prix moyen du panier par catégorie socio-professionnelle.
+        """
         # Requête pour obtenir les données
         queryset = Client.objects.values('categorie_socioprofessionnelle', 'date', 'prix_panier_client')
         data = list(queryset)
@@ -77,10 +143,24 @@ class PanierSocioProAPIView(APIView):
         # Afficher le résultat JSON
         return Response(serializer.data)
 
-
 class DepenseMoyennePanierAPIView(APIView):
+    """
+    Vue API pour calculer la dépense moyenne par panier par catégorie socio-professionnelle.
+
+    Cette vue permet de récupérer les données de transaction des clients,
+    de les traiter à l'aide de Pandas et de renvoyer le résultat au format JSON.
+
+    Attributes:
+        permission_classes (list): Les classes de permission requises pour accéder à cette API.
+    """
     # permission_classes = [IsAuthenticated]
     def get(self, *args, **kwargs):
+        """
+        Méthode pour la gestion des requêtes GET.
+
+        Returns:
+            Un objet Response contenant les données JSON de la dépense moyenne par panier par catégorie socio-professionnelle.
+        """
         # Requête pour obtenir les données
         queryset = Client.objects.values('categorie_socioprofessionnelle', 'date', 'prix_panier_client')
         data = list(queryset)
@@ -106,9 +186,20 @@ class DepenseMoyennePanierAPIView(APIView):
         # Afficher le résultat JSON
         return Response(serializer.data)
 
-
 @login_required
 def Accueil(request):
+    """
+    Vue pour la page d'accueil.
+
+    Cette vue récupère les données JSON de l'API PanierSocioProAPIView
+    et les utilise pour générer un graphique pour la page d'accueil.
+
+    Args:
+        request: L'objet HttpRequest.
+
+    Returns:
+        Un objet HttpResponse avec le contenu de la page d'accueil.
+    """
     # Créer un objet Request factice
     fake_request = HttpRequest()
     fake_request.method = 'GET'
@@ -140,6 +231,18 @@ def Accueil(request):
 
 @login_required
 def Moyenne(request):
+    """
+    Vue pour la page de la moyenne.
+
+    Cette vue récupère les données JSON de l'API DepenseMoyennePanierAPIView
+    et les utilise pour générer un graphique pour la page de la moyenne.
+
+    Args:
+        request: L'objet HttpRequest.
+
+    Returns:
+        Un objet JsonResponse avec les données JSON de la page de la moyenne.
+    """
     # Créer un objet Request factice
     fake_request = HttpRequest()
     fake_request.method = 'GET'
@@ -168,3 +271,5 @@ def Moyenne(request):
     else:
         # Gérer les erreurs de requête si nécessaire
         return JsonResponse({'error': f"Erreur de requête vers l'API: {response.status_code}"}, status=500)
+
+

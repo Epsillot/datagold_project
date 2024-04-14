@@ -6,10 +6,10 @@ from datetime import datetime, timedelta
 import random
 from django.db import models
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "goldenlineProject.settings")  # Remplace "ton_projet" par le nom de ton projet Django
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "goldenlineProject.settings")
 django.setup()
 
-from datagold.models import Collecte, Client  # Remplace "ton_app" par le nom de ton application Django
+from datagold.models import Collecte, Client
 
 fake = Faker('fr_FR')
 

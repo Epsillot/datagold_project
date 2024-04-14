@@ -1,0 +1,18 @@
+
+from sqlalchemy.orm import sessionmaker
+# Requête pour obtenir la somme de "prix_panier_total" par "categorie_socioprofessionnelle"
+result = (
+    session.query(Client.categorie_socioprofessionnelle, func.sum(Collecte.prix_panier_total).label('somme_prix_panier_total'))
+    .join(Collecte, Client.id == Collecte.client_id)
+    .group_by(Client.categorie_socioprofessionnelle)
+    .all()
+)
+
+for row in result:
+    print(f"Categorie: {row.categorie_socioprofessionnelle}, Somme Prix Panier Total: {row.somme_prix_panier_total}")
+
+    # Convertir le résultat en format JSON
+result_json = [{'categorie_socioprofessionnelle': row.categorie_socioprofessionnelle, 'somme_prix_panier_total': row.somme_prix_panier_total} for row in result]
+
+# Afficher le résultat JSON
+print(json.dumps(result_json, indent=2))

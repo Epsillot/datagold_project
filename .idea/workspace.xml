@@ -4,61 +4,149 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0f6146d-5865-4244-93a5-9b1cce06c958" name="Changes" comment="Initial Commit API Client - Base backend - et - fontend">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authentication/custom_permissions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/css/Chart.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/Chart.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/excanvas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/annotations.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/annotations.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/canvas-tools.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/canvas-tools.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/dark-blue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/dark-green.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/data.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/exporting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/exporting.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/funnel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/funnel.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/gray.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/grid.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/highcharts-more.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/highcharts-more.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/highcharts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/highcharts.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/.fr-amL3gv/skies.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/highcharts-more.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/highcharts-more.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/highcharts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/highcharts.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/modules/annotations.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/modules/annotations.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/modules/canvas-tools.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/modules/canvas-tools.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/modules/data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/modules/data.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/modules/exporting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/modules/exporting.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/modules/funnel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/modules/funnel.src.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/themes/dark-blue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/themes/dark-green.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/themes/gray.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/themes/grid.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datagold/static/js/highcharts/themes/skies.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/bar_chart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/goldenlineProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/goldenlineProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c0f6146d-5865-4244-93a5-9b1cce06c958" name="Changes" comment="tests unitaires Pytest">
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/autocomplete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/changelists.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/dark_mode.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/forms.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/nav_sidebar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/responsive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/responsive_rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/vendor/select2/LICENSE-SELECT2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/vendor/select2/select2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/vendor/select2/select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/css/widgets.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/calendar-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/gis/move_vertex_off.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/gis/move_vertex_on.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/icon-addlink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/icon-alert.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/icon-calendar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/icon-changelink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/icon-clock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/icon-deletelink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/icon-no.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/icon-unknown-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/icon-unknown.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/icon-viewlink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/icon-yes.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/inline-delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/selector-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/sorting-icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/tooltag-add.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/img/tooltag-arrowright.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/SelectBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/SelectFilter2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/cancel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/change_form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/filters.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/inlines.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/jquery.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/nav_sidebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/popup_response.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/prepopulate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/prepopulate_init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/urlify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/jquery/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/af.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/az.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/bn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/bs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/dsb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/eu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/gl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/hi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/hr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/hsb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/hy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/is.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/ka.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/km.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/mk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/ms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/nb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/ne.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/ps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/pt-BR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/ro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/sq.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/sr-Cyrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/sv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/tk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/uk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/i18n/zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/select2.full.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/select2/select2.full.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/xregexp/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datagold/static/admin/js/vendor/xregexp/xregexp.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goldenlineProject/tests/test_urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/documentation.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/custom_permissions.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/authentication/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datagold/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datagold/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authentication/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datagold/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datagold/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/datagold/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datagold/tests.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/goldenlineProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/goldenlineProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goldenlineProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/goldenlineProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/random_data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/random_data_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/authentication/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/authentication/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,13 +161,18 @@
       <list>
         <option value="package.json" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
-        <option value="Python Script" />
         <option value="Dockerfile" />
+        <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -108,43 +201,87 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.goldenlineProject.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jmba/PycharmProjects/goldenlineProject/datagold/static/js&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.goldenlineProject.executor": "Run",
+    "Django tests.Test: authentication.tests.LoginLogoutTests.test_logout_user.executor": "Run",
+    "Django tests.Test: datagold.tests.DepenseMoyennePanierAPIViewTest.test_depense_moyenne_panier_api_view.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "master__202404",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/jmba/PycharmProjects/goldenlineProject",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject" />
+      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\datagold\static" />
       <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\datagold\static\js" />
       <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\datagold\static\css" />
       <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\templates" />
-      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\datagold" />
-      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\templates" />
+      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\templates\users" />
+      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\users" />
       <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\templates\authentication" />
       <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\authentication" />
-      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\authentication\template" />
-      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\templates" />
-      <recent name="C:\Users\jmba\PycharmProjects\goldenlineProject\datagold" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django Server.goldenlineProject">
+    <configuration name="Test: authentication.tests.LoginLogoutTests.test_logout_user" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="goldenlineProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="authentication.tests.LoginLogoutTests.test_logout_user" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: datagold.tests.DepenseMoyennePanierAPIViewTest.test_depense_moyenne_panier_api_view" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="goldenlineProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="datagold.tests.DepenseMoyennePanierAPIViewTest.test_depense_moyenne_panier_api_view" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="goldenlineProject" type="Python.DjangoServer" factoryName="Django server">
       <module name="goldenlineProject" />
       <option name="ENV_FILES" value="" />
@@ -170,6 +307,12 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: datagold.tests.DepenseMoyennePanierAPIViewTest.test_depense_moyenne_panier_api_view" />
+        <item itemvalue="Django tests.Test: authentication.tests.LoginLogoutTests.test_logout_user" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -201,7 +344,14 @@
       <workItem from="1707611439638" duration="4299000" />
       <workItem from="1707655320126" duration="24782000" />
       <workItem from="1707736979674" duration="4566000" />
-      <workItem from="1707948040310" duration="6862000" />
+      <workItem from="1707948040310" duration="7291000" />
+      <workItem from="1712020444405" duration="46000" />
+      <workItem from="1712020510620" duration="34000" />
+      <workItem from="1712020557761" duration="796000" />
+      <workItem from="1712085310714" duration="10941000" />
+      <workItem from="1712258724378" duration="3123000" />
+      <workItem from="1712653936790" duration="16946000" />
+      <workItem from="1712869706446" duration="37810000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit API Client - Base backend - et - fontend">
       <option name="closed" value="true" />
@@ -283,14 +433,115 @@
       <option name="project" value="LOCAL" />
       <updated>1707488650686</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Initial Commit API Client - Base backend - et - fontend">
+      <option name="closed" value="true" />
+      <created>1707956057557</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707956057557</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Initial Commit API Client - Base backend - et - fontend">
+      <option name="closed" value="true" />
+      <created>1707956143156</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1707956143156</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Initial Commit API Client - Base backend - et - fontend">
+      <option name="closed" value="true" />
+      <created>1713102826920</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1713102826920</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Gestion des erreurs 404 et 500">
+      <option name="closed" value="true" />
+      <created>1713103085021</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1713103085021</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Tests unitaires Pytest">
+      <option name="closed" value="true" />
+      <created>1713103303781</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1713103303781</updated>
+    </task>
+    <task id="LOCAL-00016" summary="dossier static pour déploiement en prod">
+      <option name="closed" value="true" />
+      <created>1713103545985</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1713103545985</updated>
+    </task>
+    <task id="LOCAL-00017" summary="redirection vers page d'erreur 404 et 500 personnalisée">
+      <option name="closed" value="true" />
+      <created>1713103746477</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1713103746477</updated>
+    </task>
+    <task id="LOCAL-00018" summary="redirection vers page d'erreur 404 et 500 personnalisée">
+      <option name="closed" value="true" />
+      <created>1713103861281</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1713103861281</updated>
+    </task>
+    <task id="LOCAL-00019" summary="modif titre du site admin django">
+      <option name="closed" value="true" />
+      <created>1713104019339</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1713104019339</updated>
+    </task>
+    <task id="LOCAL-00020" summary="tests unitaires Pytest">
+      <option name="closed" value="true" />
+      <created>1713104129196</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1713104129196</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit API Client - Base backend - et - fontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit API Client - Base backend - et - fontend" />
+    <MESSAGE value="Gestion des erreurs 404 et 500" />
+    <MESSAGE value="Tests unitaires Pytest" />
+    <MESSAGE value="dossier static pour déploiement en prod" />
+    <MESSAGE value="redirection vers page d'erreur 404 et 500 personnalisée" />
+    <MESSAGE value="modif titre du site admin django" />
+    <MESSAGE value="tests unitaires Pytest" />
+    <option name="LAST_COMMIT_MESSAGE" value="tests unitaires Pytest" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/goldenlineProject$Test__datagold_tests_DepenseMoyennePanierAPIViewTest_test_depense_moyenne_panier_api_view.coverage" NAME="Test: datagold.tests.DepenseMoyennePanierAPIViewTest.test_depense_moyenne_panier_api_view Coverage Results" MODIFIED="1712682727798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/goldenlineProject$Test__authentication_tests_LoginLogoutTests_test_logout_user.coverage" NAME="Test: authentication.tests.LoginLogoutTests.test_logout_user Coverage Results" MODIFIED="1712678755698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

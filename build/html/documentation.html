@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataGold Documentation &mdash; Documentation DataGold 0.1</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=af8511e3"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=d99ca74e"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Welcome to DataGold’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DataGold
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DataGold Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#technologies">Technologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture-du-projet">Architecture du Projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pre-requis-installation">Pre requis (installation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-de-la-base-de-donnees">Creation de la base de donnees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-du-projet">Installation du Projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#developpement">Developpement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#detail-module-d-autentificatioin">Detail module d’autentificatioin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#authentication.views.custom_page_not_found"><code class="docutils literal notranslate"><span class="pre">custom_page_not_found()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#authentication.views.custom_server_error"><code class="docutils literal notranslate"><span class="pre">custom_server_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#authentication.views.login_page"><code class="docutils literal notranslate"><span class="pre">login_page()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#authentication.views.logout_user"><code class="docutils literal notranslate"><span class="pre">logout_user()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datagold.models">Detail module datagold</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#datagold.models.Client"><code class="docutils literal notranslate"><span class="pre">Client</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#datagold.models.Client.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Client.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datagold.models.Client.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Client.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#datagold.models.Collecte"><code class="docutils literal notranslate"><span class="pre">Collecte</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#datagold.models.Collecte.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Collecte.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datagold.models.Collecte.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Collecte.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#datagold.views.Accueil"><code class="docutils literal notranslate"><span class="pre">Accueil()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datagold.views.ClientAPIView"><code class="docutils literal notranslate"><span class="pre">ClientAPIView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#datagold.views.ClientAPIView.get"><code class="docutils literal notranslate"><span class="pre">ClientAPIView.get()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#datagold.views.CollecteAPIView"><code class="docutils literal notranslate"><span class="pre">CollecteAPIView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#datagold.views.CollecteAPIView.get"><code class="docutils literal notranslate"><span class="pre">CollecteAPIView.get()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#datagold.views.DepenseMoyennePanierAPIView"><code class="docutils literal notranslate"><span class="pre">DepenseMoyennePanierAPIView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#datagold.views.DepenseMoyennePanierAPIView.get"><code class="docutils literal notranslate"><span class="pre">DepenseMoyennePanierAPIView.get()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#datagold.views.Moyenne"><code class="docutils literal notranslate"><span class="pre">Moyenne()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datagold.views.PanierSocioProAPIView"><code class="docutils literal notranslate"><span class="pre">PanierSocioProAPIView</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#datagold.views.PanierSocioProAPIView.get"><code class="docutils literal notranslate"><span class="pre">PanierSocioProAPIView.get()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#datagold.views.custom_page_not_found"><code class="docutils literal notranslate"><span class="pre">custom_page_not_found()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datagold.views.custom_server_error"><code class="docutils literal notranslate"><span class="pre">custom_server_error()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#securite">Securité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deploiement">Deploiement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maintenance">Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#evolution-future">Evolution future</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DataGold</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">DataGold Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/documentation.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="datagold-documentation">
+<h1>DataGold Documentation<a class="headerlink" href="#datagold-documentation" title="Link to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Jean-Marc</p>
+</dd>
+<dt class="field-even">Version<span class="colon">:</span></dt>
+<dd class="field-even"><p>1.0</p>
+</dd>
+<dt class="field-odd">License<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Creative Commons</p>
+</dd>
+</dl>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>Cette documentation met en avant les élements les plus importants pour installer et configurer l’application DataGold.
+Le projet vise à fournir une solution permettant aux utilisateurs de visualiser sous forme graphiques les données collectées lors des passages en caisse des clients de GoldenLine.
+La solution est composée d’une application front end et d’un back end reservé aux administrateurs.</p>
+</section>
+<section id="technologies">
+<h2>Technologies<a class="headerlink" href="#technologies" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Python</p></li>
+<li><p>Django rest</p></li>
+<li><p>Bootstrap</p></li>
+<li><p>Chart JS</p></li>
+<li><p>CSS</p></li>
+<li><p>HMTL</p></li>
+<li><p>PostgreSQL</p></li>
+</ul>
+</section>
+<section id="architecture-du-projet">
+<h2>Architecture du Projet<a class="headerlink" href="#architecture-du-projet" title="Link to this heading"></a></h2>
+<p>Le projet suit une architecture modèle-vue-contrôleur (MVC), avec les composants suivants :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Modèles de Données : Définissent la structure de la base de données pour les utilisateurs.</p></li>
+<li><p>Vues : Gèrent la logique métier et l’interaction avec les utilisateurs.</p></li>
+<li><p>Contrôleurs : Traite les requêtes HTTP et appelle les vues appropriées.</p></li>
+<li><p>Templates HTML : Fournissent l’interface utilisateur pour interagir avec le système.</p></li>
+</ul>
+</div></blockquote>
+<p>Le Framework Django est le socle utilisé dans le cadre de la réalisation de cette solution.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>L’application front office est composée de deux app Django :</dt><dd><ul class="simple">
+<li><p><strong>authentication</strong> pour la gestion des acces au portail front end.</p></li>
+<li><p><strong>datagold</strong> pour le traitement et la restitution sous forme de graphiques dynamiques</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Le back end est celui fourni par le Framework Django (Django admin)</strong></p>
+</div></blockquote>
+<p>Le projet suit une architecture modèle-vue-contrôleur (MVC) typique pour les applications web Django.</p>
+<p>Voici une vue d’ensemble de la structure du projet :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>**goldenlineProject**
+
+<span class="w"> </span>**goldenlineProject/**_____#<span class="w"> </span><span class="s2">&quot;Dossier racine du projet Django&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>__init__.py
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>settings.py_________#<span class="w"> </span><span class="s2">&quot;Configuration du projet&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>urls.py_____________#<span class="w"> </span><span class="s2">&quot;Routage des URL du projet&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>wsgi.py_____________#<span class="w"> </span><span class="s2">&quot;Point d&#39;entrée WSGI pour les serveurs web&quot;</span>
+
+<span class="w"> </span>**authentication/**_______#<span class="w"> </span><span class="s2">&quot;Application pour la page d&#39;autentification des utilisateurs&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>migrations/_________#<span class="w"> </span><span class="s2">&quot;Fichiers de migration de la base de données&quot;</span>
+<span class="p">|</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>__init__.py
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>admin.py____________#<span class="w"> </span><span class="s2">&quot;Configuration de l&#39;interface d&#39;administration&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>apps.py_____________#<span class="w"> </span><span class="s2">&quot;Configuration de l&#39;application&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>forms.py____________#<span class="w"> </span><span class="s2">&quot;Modèles de formulaire&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>models.py___________#<span class="w"> </span><span class="s2">&quot;Modèles de données&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>tests.py____________#<span class="w"> </span><span class="s2">&quot;Tests unitaires&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>urls.py_____________#<span class="w"> </span><span class="s2">&quot;Routage des URL de l&#39;application&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>views.py____________#<span class="w"> </span><span class="s2">&quot;Logique des vues&quot;</span>
+
+<span class="w"> </span>**datagold/**_______#<span class="w"> </span><span class="s2">&quot;Application de traitement et de visualisation des donnees&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>migrations/_________#<span class="w"> </span><span class="s2">&quot;Fichiers de migration de la base de données&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>templates/__________#<span class="w"> </span><span class="s2">&quot;Modèles HTML pour les vues&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>__init__.py
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>admin.py____________#<span class="w"> </span><span class="s2">&quot;Configuration de l&#39;interface d&#39;administration&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>apps.py_____________#<span class="w"> </span><span class="s2">&quot;Configuration de l&#39;application&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>forms.py____________#<span class="w"> </span><span class="s2">&quot;Modèles de formulaire&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>models.py___________#<span class="w"> </span><span class="s2">&quot;Modèles de données&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>tests.py____________#<span class="w"> </span><span class="s2">&quot;Tests unitaires&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>urls.py_____________#<span class="w"> </span><span class="s2">&quot;Routage des URL de l&#39;application&quot;</span>
+<span class="p">|</span><span class="w">            </span>+--<span class="w"> </span>views.py____________#<span class="w"> </span><span class="s2">&quot;Logique des vues&quot;</span>
+
+<span class="w"> </span>**manage.py**________________________#<span class="w"> </span><span class="s2">&quot;Script de gestion du projet Django&quot;</span>
+
+<span class="w"> </span>**templates/**__________#<span class="w"> </span><span class="s2">&quot;Modèles HTML pour les vues&quot;</span>
+
+<span class="w"> </span>**statics/**__________#<span class="w"> </span><span class="s2">&quot;Ressources staétiques&quot;</span>
+</pre></div>
+</div>
+<p><strong>Modèle Conceptuel de Données (MCD)  simplifié pour le module DataGold (traitement et visualisation des données) :</strong></p>
+<p><strong>Entités :</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt>Client</dt><dd><p>Attributs : Prénom, Nom, Mail, Nombre d’enfants, Ville, Classe socio-professionnelle
+Clé primaire : Identifiant client (généré automatiquement)</p>
+</dd>
+<dt>Collecte de Données</dt><dd><p>Attributs : Identifiant collecte
+Clé primaire : Identifiant collecte (généré automatiquement)
+Clé étrangère : Identifiant client (lien vers le client)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Associations :</strong></p>
+<p>Client-Collecte de Données :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Relation : Chaque client peut être associé à plusieurs collectes de données.</p></li>
+<li><p>Cardinalité : Client (1) — Collecte de Données (0..N)</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="pre-requis-installation">
+<h2>Pre requis (installation)<a class="headerlink" href="#pre-requis-installation" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>OS</strong> : Ubuntu Server 20.04 LTS (ou version ulterieure)</p></li>
+<li><p><strong>RAM</strong> : 8 Go minimum</p></li>
+<li><p><strong>Disque</strong> : 50 Go minimum</p></li>
+<li><p><strong>Processeurs</strong> : 2 minimum</p></li>
+<li><p><strong>Base</strong> : PostgreSQL 14</p></li>
+</ul>
+</section>
+<section id="creation-de-la-base-de-donnees">
+<h2>Creation de la base de donnees<a class="headerlink" href="#creation-de-la-base-de-donnees" title="Link to this heading"></a></h2>
+<p>Pour utiliser l’application DataGold, vous devez d’abord créer une base de données et un utilisateur.
+Suivez les étapes ci-dessous pour effectuer cette configuration :</p>
+<ol class="arabic simple">
+<li><p><strong>Creation de la base de donnees :</strong></p>
+<ul class="simple">
+<li><p>Connectez-vous à PostgreSQL en tant qu’administrateur.</p></li>
+<li><p>Utilisez la commande SQL appropriée pour créer la base de données.</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>CREATE<span class="w"> </span>DATABASE<span class="w"> </span>datagold<span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Création de l’utilisateur :</strong></p>
+<ul class="simple">
+<li><p>Créez l’utilisateur « datapro » et accordez-lui les privilèges appropriés.</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">  </span>CREATE<span class="w"> </span>USER<span class="w"> </span><span class="s1">&#39;datapro&#39;</span>@<span class="s1">&#39;localhost&#39;</span><span class="w"> </span>IDENTIFIED<span class="w"> </span>BY<span class="w"> </span><span class="s1">&#39;mot_de_passe&#39;</span><span class="p">;</span>
+<span class="w">  </span>GRANT<span class="w"> </span>ALL<span class="w"> </span>PRIVILEGES<span class="w"> </span>ON<span class="w"> </span>datagold.*<span class="w"> </span>TO<span class="w"> </span><span class="s1">&#39;datapro&#39;</span>@<span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+<span class="w">  </span>FLUSH<span class="w"> </span>PRIVILEGES<span class="p">;</span>
+
+Remplacer<span class="w"> </span><span class="sb">``</span><span class="s1">&#39;mot_de_passe&#39;</span><span class="sb">``</span><span class="w"> </span>par<span class="w"> </span>un<span class="w"> </span>mot<span class="w"> </span>de<span class="w"> </span>passe<span class="w"> </span>sécurisé<span class="w"> </span>de<span class="w"> </span>votre<span class="w"> </span>choix.
+</pre></div>
+</div>
+<p>Une fois ces étapes effectuées, vous pouvez configurer votre application DataGold pour qu’elle utilise cette base de données et cet utilisateur lors de son fonctionnement.
+Les paramètres de la base de données peuvent etre modifiés dans « goldenlineProject/settings.py » =&gt; DATABASES…</p>
+</section>
+<section id="installation-du-projet">
+<h2>Installation du Projet<a class="headerlink" href="#installation-du-projet" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Cloner le dépôt :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Epsillot/datagold_project
+</pre></div>
+</div>
+<ol class="arabic" start="2">
+<li><p>Aller dans le dossier goldenligneProject puis activez virtualenv :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Création de l’environnement virtuel :</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virtualenv<span class="w"> </span>venv
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Activation de venv :</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w">  </span>venv/bin/activate
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Installer les dépendances Python :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Effectuer les migrations de la base de données :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Lancer le serveur de développement :</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+</div>
+</section>
+<section id="developpement">
+<h2>Developpement<a class="headerlink" href="#developpement" title="Link to this heading"></a></h2>
+</section>
+<section id="detail-module-d-autentificatioin">
+<h2>Detail module d’autentificatioin<a class="headerlink" href="#detail-module-d-autentificatioin" title="Link to this heading"></a></h2>
+<dl class="py function" id="module-authentication.views">
+<dt class="sig sig-object py" id="authentication.views.custom_page_not_found">
+<span class="sig-prename descclassname"><span class="pre">authentication.views.</span></span><span class="sig-name descname"><span class="pre">custom_page_not_found</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#authentication.views.custom_page_not_found" title="Link to this definition"></a></dt>
+<dd><p>Renvoie une page d’erreur 404 personnalisée.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request: L’objet HttpRequest.
+exception: L’exception qui a déclenché l’erreur.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Un objet HttpResponse avec le contenu de la page d’erreur 404.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="authentication.views.custom_server_error">
+<span class="sig-prename descclassname"><span class="pre">authentication.views.</span></span><span class="sig-name descname"><span class="pre">custom_server_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#authentication.views.custom_server_error" title="Link to this definition"></a></dt>
+<dd><p>Renvoie une page d’erreur 500 personnalisée.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request: L’objet HttpRequest.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Un objet HttpResponse avec le contenu de la page d’erreur 500.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="authentication.views.login_page">
+<span class="sig-prename descclassname"><span class="pre">authentication.views.</span></span><span class="sig-name descname"><span class="pre">login_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#authentication.views.login_page" title="Link to this definition"></a></dt>
+<dd><p>Affiche et gère la page de connexion.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request: L’objet HttpRequest.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Un objet HttpResponse avec le contenu de la page de connexion.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="authentication.views.logout_user">
+<span class="sig-prename descclassname"><span class="pre">authentication.views.</span></span><span class="sig-name descname"><span class="pre">logout_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#authentication.views.logout_user" title="Link to this definition"></a></dt>
+<dd><p>Déconnecte l’utilisateur et redirige vers la page de connexion.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request: L’objet HttpRequest.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Un objet HttpResponseRedirect redirigeant vers la page de connexion.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-datagold.models">
+<span id="detail-module-datagold"></span><h2>Detail module datagold<a class="headerlink" href="#module-datagold.models" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datagold.models.Client">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datagold.models.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.models.Client" title="Link to this definition"></a></dt>
+<dd><p>Modèle pour les clients.</p>
+<p>Ce modèle représente un client avec des informations telles que le client anonyme, le nombre d’enfants,
+la catégorie socio-professionnelle, le prix du panier du client, la date et la collecte d’achat.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>client_anonym (CharField): Le nom anonyme du client.
+nombre_enfants (IntegerField): Le nombre d’enfants du client.
+categorie_socioprofessionnelle (CharField): La catégorie socio-professionnelle du client.
+prix_panier_client (DecimalField): Le prix du panier du client.
+date (DateField): La date de la transaction.
+collecte_achat (IntegerField): La quantité d’articles achetés lors de la collecte.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="datagold.models.Client.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#datagold.models.Client.DoesNotExist" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="datagold.models.Client.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#datagold.models.Client.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datagold.models.Collecte">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datagold.models.</span></span><span class="sig-name descname"><span class="pre">Collecte</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.models.Collecte" title="Link to this definition"></a></dt>
+<dd><p>Modèle pour la collecte d’articles.</p>
+<p>Ce modèle représente une collecte d’articles avec des informations telles que la quantité collectée,
+la catégorie d’article et le prix de l’article.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>collecte (IntegerField): La quantité collectée.
+categorie_article (CharField): La catégorie de l’article.
+prix_article (DecimalField): Le prix de l’article.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="datagold.models.Collecte.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#datagold.models.Collecte.DoesNotExist" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="datagold.models.Collecte.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#datagold.models.Collecte.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function" id="module-datagold.views">
+<dt class="sig sig-object py" id="datagold.views.Accueil">
+<span class="sig-prename descclassname"><span class="pre">datagold.views.</span></span><span class="sig-name descname"><span class="pre">Accueil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.views.Accueil" title="Link to this definition"></a></dt>
+<dd><p>Vue pour la page d’accueil.</p>
+<p>Cette vue récupère les données JSON de l’API PanierSocioProAPIView
+et les utilise pour générer un graphique pour la page d’accueil.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request: L’objet HttpRequest.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Un objet HttpResponse avec le contenu de la page d’accueil.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datagold.views.ClientAPIView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datagold.views.</span></span><span class="sig-name descname"><span class="pre">ClientAPIView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.views.ClientAPIView" title="Link to this definition"></a></dt>
+<dd><p>Vue API pour récupérer les clients.</p>
+<p>Cette vue permet de récupérer tous les clients de la base de données
+et de les sérialiser en JSON.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>permission_classes (list): Les classes de permission requises pour accéder à cette API.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datagold.views.ClientAPIView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.views.ClientAPIView.get" title="Link to this definition"></a></dt>
+<dd><p>Méthode pour la gestion des requêtes GET.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Un objet Response contenant les données JSON des clients.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datagold.views.CollecteAPIView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datagold.views.</span></span><span class="sig-name descname"><span class="pre">CollecteAPIView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.views.CollecteAPIView" title="Link to this definition"></a></dt>
+<dd><p>Vue API pour exporter les données de collecte au format CSV.</p>
+<p>Cette vue permet de récupérer les données de collecte de la base de données
+et de les exporter au format CSV.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>permission_classes (list): Les classes de permission requises pour accéder à cette API.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datagold.views.CollecteAPIView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.views.CollecteAPIView.get" title="Link to this definition"></a></dt>
+<dd><p>Méthode pour la gestion des requêtes GET.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request: L’objet HttpRequest.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Un objet HttpResponse avec les données de collecte exportées au format CSV.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datagold.views.DepenseMoyennePanierAPIView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datagold.views.</span></span><span class="sig-name descname"><span class="pre">DepenseMoyennePanierAPIView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.views.DepenseMoyennePanierAPIView" title="Link to this definition"></a></dt>
+<dd><p>Vue API pour calculer la dépense moyenne par panier par catégorie socio-professionnelle.</p>
+<p>Cette vue permet de récupérer les données de transaction des clients,
+de les traiter à l’aide de Pandas et de renvoyer le résultat au format JSON.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>permission_classes (list): Les classes de permission requises pour accéder à cette API.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datagold.views.DepenseMoyennePanierAPIView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.views.DepenseMoyennePanierAPIView.get" title="Link to this definition"></a></dt>
+<dd><p>Méthode pour la gestion des requêtes GET.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Un objet Response contenant les données JSON de la dépense moyenne par panier par catégorie socio-professionnelle.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datagold.views.Moyenne">
+<span class="sig-prename descclassname"><span class="pre">datagold.views.</span></span><span class="sig-name descname"><span class="pre">Moyenne</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.views.Moyenne" title="Link to this definition"></a></dt>
+<dd><p>Vue pour la page de la moyenne.</p>
+<p>Cette vue récupère les données JSON de l’API DepenseMoyennePanierAPIView
+et les utilise pour générer un graphique pour la page de la moyenne.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request: L’objet HttpRequest.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Un objet JsonResponse avec les données JSON de la page de la moyenne.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datagold.views.PanierSocioProAPIView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datagold.views.</span></span><span class="sig-name descname"><span class="pre">PanierSocioProAPIView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.views.PanierSocioProAPIView" title="Link to this definition"></a></dt>
+<dd><p>Vue API pour calculer le prix moyen du panier par catégorie socio-professionnelle.</p>
+<p>Cette vue permet de récupérer les données de transaction des clients,
+de les traiter à l’aide de Pandas et de renvoyer le résultat au format JSON.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><p>permission_classes (list): Les classes de permission requises pour accéder à cette API.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="datagold.views.PanierSocioProAPIView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.views.PanierSocioProAPIView.get" title="Link to this definition"></a></dt>
+<dd><p>Méthode pour la gestion des requêtes GET.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Un objet Response contenant les données JSON du prix moyen du panier par catégorie socio-professionnelle.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datagold.views.custom_page_not_found">
+<span class="sig-prename descclassname"><span class="pre">datagold.views.</span></span><span class="sig-name descname"><span class="pre">custom_page_not_found</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.views.custom_page_not_found" title="Link to this definition"></a></dt>
+<dd><p>Renvoie une page d’erreur 404 personnalisée.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request: L’objet HttpRequest.
+exception: L’exception qui a déclenché l’erreur.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Un objet HttpResponse avec le contenu de la page d’erreur 404.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datagold.views.custom_server_error">
+<span class="sig-prename descclassname"><span class="pre">datagold.views.</span></span><span class="sig-name descname"><span class="pre">custom_server_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datagold.views.custom_server_error" title="Link to this definition"></a></dt>
+<dd><p>Renvoie une page d’erreur 500 personnalisée.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request: L’objet HttpRequest.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Un objet HttpResponse avec le contenu de la page d’erreur 500.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="securite">
+<h2>Securité<a class="headerlink" href="#securite" title="Link to this heading"></a></h2>
+<p><strong>Accès aux Données</strong></p>
+<p>L’accès est contrôlé par un mécanisme d’authentification, avec vérification des identifiants de connexion.
+Seuls les membres autorisés de l’équipe marketing peuvent accéder à l’application, et ils doivent s’authentifier avec succès avec leurs identifiant et mot de passe.</p>
+<p><strong>Protection des Données Clients</strong></p>
+<p>Les données personnelles des clients, telles que les noms, les adresses e-mail et les achats, sont sécurisées en les anonymisant  conformément aux réglementations sur la protection des données (telles que le RGPD).
+Les accès à ces données seront strictement contrôlés et limités aux seuls utilisateurs autorisés qui en ont besoin pour effectuer leur travail.</p>
+<p><strong>Communication Sécurisée</strong></p>
+<p>Toutes les communications entre le frontend et le backend de l’application seront sécurisées à l’aide de protocoles de chiffrement tels que HTTPS (HTTP sécurisé) pour garantir la confidentialité et l’intégrité des données échangées.</p>
+<p><strong>Sécurité des Données</strong></p>
+<p>Les données seront stockées de manière sécurisée dans des bases de données sécurisées, avec des mécanismes de sauvegarde et de récupération en place pour protéger contre la perte de données. Des contrôles d’accès basés sur les rôles seront utilisés pour limiter l’accès aux données sensibles.</p>
+<p><strong>Sécurité des Sessions</strong></p>
+<p>Si l’application nécessite la gestion des sessions utilisateur, des mécanismes de gestion des sessions sécurisés seront mis en place pour protéger contre les attaques de session et garantir l’authenticité des utilisateurs.</p>
+<p><strong>Gestion des Erreurs</strong></p>
+<p>Les erreurs de l’application seront gérées de manière sécurisée pour éviter les fuites d’informations sensibles. Les messages d’erreur génériques seront utilisés pour ne pas divulguer d’informations sensibles sur le système.</p>
+</section>
+<section id="tests">
+<h2>Tests<a class="headerlink" href="#tests" title="Link to this heading"></a></h2>
+<p><strong>Tests unitaires</strong></p>
+<p>Une suite de tests unitaires, a été créé pour différentes parties de l’application, notamment les modèles, les vues et les formulaires.</p>
+<p><strong>Modèles</strong></p>
+<p>Ces tests vérifient la création, la modification, et la suppression des objets, ainsi que les relations entre les différents modèles.</p>
+<p><strong>Vues</strong></p>
+<p>Ces tests vérifient le renvoi des bonnes réponses en fonction des requêtes HTTP reçues,
+pour les fonctionnalités telles que l’affichage des données, la création d’objets, la mise à jour et la suppression.</p>
+<p><strong>Formulaires</strong></p>
+<p>testés pour valider les données entrées par l’utilisateur.
+Vérifient que les formulaires acceptent les données valides et rejettent les données invalides, en fonction des contraintes définies dans les modèles.</p>
+<p><strong>Couverture de code</strong></p>
+<p>L’outil Pytest permet de lancer les tests unitaires et  de mesurer  la couverture de code testé.</p>
+<p>Le rapport de couverture est ici : <a class="reference external" href="http://jmba.cloud/datagold_tests/">http://jmba.cloud/datagold_tests/</a></p>
+</section>
+<section id="deploiement">
+<h2>Deploiement<a class="headerlink" href="#deploiement" title="Link to this heading"></a></h2>
+<p><strong>Environnement de production</strong></p>
+<p>Cet environnement doit disposer  de ressources robustes et sécurisées pour garantir la disponibilité et la fiabilité de l’application.</p>
+<p><strong>Infrastructure</strong></p>
+<p>L’infrastructure de déploiement doit être basée sur des serveurs cloud sécurisés, avec des mécanismes de redondance et de sauvegarde pour assurer la disponibilité continue de l’application.</p>
+</section>
+<section id="maintenance">
+<h2>Maintenance<a class="headerlink" href="#maintenance" title="Link to this heading"></a></h2>
+<p>La maintenance de l’application DataGold est un processus continu visant à garantir sa fiabilité, sa sécurité et sa performance tout au long de son cycle de vie.</p>
+</section>
+<section id="evolution-future">
+<h2>Evolution future<a class="headerlink" href="#evolution-future" title="Link to this heading"></a></h2>
+<p>Voici quelques axes d’évolution envisagé :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Amélioration de l’expérience utilisateur</p></li>
+<li><p>Amélioration de l’interface utilisateur et en ajoutant de nouvelles fonctionnalités qui répondent aux besoins de nos utilisateurs.</p></li>
+<li><p>Ajout d’options de personnalisation pour permettre aux utilisateurs d’adapter l’application à leurs besoins spécifiques. Par exemple leur offir la possibilité de configurer des paramètres d’affichages ou le choix des graphiques, de personnaliser les préférences utilisateur et d’ajuster l’interface pour une meilleure adaptabilité.</p></li>
+<li><p>Intégration avec d’autres systèmes telque des plateformes de messagerie, des outils de productivité et d’autres applications tierces.</p></li>
+<li><p>Utilisation des technologies d’intelligence artificielle et d’apprentissage automatique pour offrir des fonctionnalités avancées telles que la  la prédiction des tendences d’achat client et l’automatisation des tâches répétitives.</p></li>
+<li><p>Optimisation des performances et  évolution de l’application pour garantir qu’elle puisse gérer une charge de plus en plus importante tout en maintenant des temps de réponse rapides et une fiabilité élevée.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to DataGold’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, JMBA.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

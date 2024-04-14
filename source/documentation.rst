@@ -1,0 +1,328 @@
+DataGold Documentation
+========================
+
+:Author: Jean-Marc
+:Version: 1.0
+:License: Creative Commons
+
+Introduction
+------------
+
+Cette documentation met en avant les élements les plus importants pour installer et configurer l'application DataGold.
+Le projet vise à fournir une solution permettant aux utilisateurs de visualiser sous forme graphiques les données collectées lors des passages en caisse des clients de GoldenLine.
+La solution est composée d'une application front end et d'un back end reservé aux administrateurs.
+
+Technologies
+------------
+* Python
+* Django rest
+* Bootstrap
+* Chart JS
+* CSS
+* HMTL
+* PostgreSQL
+
+
+Architecture du Projet
+------------
+Le projet suit une architecture modèle-vue-contrôleur (MVC), avec les composants suivants :
+
+    - Modèles de Données : Définissent la structure de la base de données pour les utilisateurs.
+
+    - Vues : Gèrent la logique métier et l'interaction avec les utilisateurs.
+
+    - Contrôleurs : Traite les requêtes HTTP et appelle les vues appropriées.
+
+    - Templates HTML : Fournissent l'interface utilisateur pour interagir avec le système.
+
+Le Framework Django est le socle utilisé dans le cadre de la réalisation de cette solution.
+
+    L'application front office est composée de deux app Django :
+        - **authentication** pour la gestion des acces au portail front end.
+        - **datagold** pour le traitement et la restitution sous forme de graphiques dynamiques
+
+    **Le back end est celui fourni par le Framework Django (Django admin)**
+
+Le projet suit une architecture modèle-vue-contrôleur (MVC) typique pour les applications web Django.
+
+Voici une vue d'ensemble de la structure du projet :
+
+.. code-block:: bash
+
+    **goldenlineProject**
+
+    **goldenlineProject/**_____# "Dossier racine du projet Django"
+   |            +-- __init__.py
+   |            +-- settings.py_________# "Configuration du projet"
+   |            +-- urls.py_____________# "Routage des URL du projet"
+   |            +-- wsgi.py_____________# "Point d'entrée WSGI pour les serveurs web"
+
+    **authentication/**_______# "Application pour la page d'autentification des utilisateurs"
+   |            +-- migrations/_________# "Fichiers de migration de la base de données"
+   |
+   |            +-- __init__.py
+   |            +-- admin.py____________# "Configuration de l'interface d'administration"
+   |            +-- apps.py_____________# "Configuration de l'application"
+   |            +-- forms.py____________# "Modèles de formulaire"
+   |            +-- models.py___________# "Modèles de données"
+   |            +-- tests.py____________# "Tests unitaires"
+   |            +-- urls.py_____________# "Routage des URL de l'application"
+   |            +-- views.py____________# "Logique des vues"
+
+    **datagold/**_______# "Application de traitement et de visualisation des donnees"
+   |            +-- migrations/_________# "Fichiers de migration de la base de données"
+   |            +-- templates/__________# "Modèles HTML pour les vues"
+   |            +-- __init__.py
+   |            +-- admin.py____________# "Configuration de l'interface d'administration"
+   |            +-- apps.py_____________# "Configuration de l'application"
+   |            +-- forms.py____________# "Modèles de formulaire"
+   |            +-- models.py___________# "Modèles de données"
+   |            +-- tests.py____________# "Tests unitaires"
+   |            +-- urls.py_____________# "Routage des URL de l'application"
+   |            +-- views.py____________# "Logique des vues"
+
+    **manage.py**________________________# "Script de gestion du projet Django"
+
+    **templates/**__________# "Modèles HTML pour les vues"
+
+    **statics/**__________# "Ressources staétiques"
+
+
++-------------------+--------------------------------------+
+| Modèle            | Description                          |
++===================+======================================+
+| User              | Représente un utilisateur avec      |
+|                   | divers champs comme `username`,      |
+|                   | `password`, `email`, etc.            |
++-------------------+--------------------------------------+
+| Group             | Représente un groupe d'utilisateurs.|
++-------------------+--------------------------------------+
+| Permission        | Représente une permission associée  |
+|                   | à un utilisateur ou à un groupe pour|
+|                   | définir les autorisations d'accès.  |
++-------------------+--------------------------------------+
+
+**Modèle Conceptuel de Données (MCD)  simplifié pour le module DataGold (traitement et visualisation des données) :**
+
+**Entités :**
+
+    Client
+        Attributs : Prénom, Nom, Mail, Nombre d'enfants, Ville, Classe socio-professionnelle
+        Clé primaire : Identifiant client (généré automatiquement)
+
+
+
+    Collecte de Données
+        Attributs : Identifiant collecte
+        Clé primaire : Identifiant collecte (généré automatiquement)
+        Clé étrangère : Identifiant client (lien vers le client)
+
+**Associations :**
+
+Client-Collecte de Données :
+
+        - Relation : Chaque client peut être associé à plusieurs collectes de données.
+        - Cardinalité : Client (1) --- Collecte de Données (0..N)
+
+
+
+Pre requis (installation)
+------------------
+- **OS** : Ubuntu Server 20.04 LTS (ou version ulterieure)
+- **RAM** : 8 Go minimum
+- **Disque** : 50 Go minimum
+- **Processeurs** : 2 minimum
+- **Base** : PostgreSQL 14
+
+
+Creation de la base de donnees
+------------------
+
+Pour utiliser l'application DataGold, vous devez d'abord créer une base de données et un utilisateur.
+Suivez les étapes ci-dessous pour effectuer cette configuration :
+
+1. **Creation de la base de donnees :**
+
+   - Connectez-vous à PostgreSQL en tant qu'administrateur.
+   - Utilisez la commande SQL appropriée pour créer la base de données.
+
+.. code-block:: bash
+
+        CREATE DATABASE datagold;
+
+2. **Création de l'utilisateur :**
+
+   - Créez l'utilisateur "datapro" et accordez-lui les privilèges appropriés.
+
+.. code-block:: bash
+
+     CREATE USER 'datapro'@'localhost' IDENTIFIED BY 'mot_de_passe';
+     GRANT ALL PRIVILEGES ON datagold.* TO 'datapro'@'localhost';
+     FLUSH PRIVILEGES;
+
+   Remplacer ``'mot_de_passe'`` par un mot de passe sécurisé de votre choix.
+
+Une fois ces étapes effectuées, vous pouvez configurer votre application DataGold pour qu'elle utilise cette base de données et cet utilisateur lors de son fonctionnement.
+Les paramètres de la base de données peuvent etre modifiés dans "goldenlineProject/settings.py" => DATABASES...
+
+
+
+Installation du Projet
+----------------------
+
+1. Cloner le dépôt :
+
+.. code-block:: bash
+
+    git clone https://github.com/Epsillot/datagold_project
+
+2. Aller dans le dossier goldenligneProject puis activez virtualenv :
+
+    - Création de l'environnement virtuel :
+
+    .. code-block:: bash
+
+        virtualenv venv
+
+
+    - Activation de venv :
+
+    .. code-block:: bash
+
+        source  venv/bin/activate
+
+
+2. Installer les dépendances Python :
+
+.. code-block:: bash
+
+    pip install -r requirements.txt
+
+
+3. Effectuer les migrations de la base de données :
+
+.. code-block:: bash
+
+    python manage.py migrate
+
+4. Lancer le serveur de développement :
+
+.. code-block:: bash
+
+    python manage.py runserver
+
+
+
+Developpement
+----------------------
+
+Detail module d'autentificatioin
+----------------------
+
+.. automodule:: authentication.views
+   :members:
+
+Detail module datagold
+----------------------
+
+.. automodule:: datagold.models
+   :members:
+
+.. automodule:: datagold.views
+   :members:
+
+Securité
+----------------------
+**Accès aux Données**
+
+L'accès est contrôlé par un mécanisme d'authentification, avec vérification des identifiants de connexion.
+Seuls les membres autorisés de l'équipe marketing peuvent accéder à l'application, et ils doivent s'authentifier avec succès avec leurs identifiant et mot de passe.
+
+**Protection des Données Clients**
+
+Les données personnelles des clients, telles que les noms, les adresses e-mail et les achats, sont sécurisées en les anonymisant  conformément aux réglementations sur la protection des données (telles que le RGPD).
+Les accès à ces données seront strictement contrôlés et limités aux seuls utilisateurs autorisés qui en ont besoin pour effectuer leur travail.
+
+**Communication Sécurisée**
+
+Toutes les communications entre le frontend et le backend de l'application seront sécurisées à l'aide de protocoles de chiffrement tels que HTTPS (HTTP sécurisé) pour garantir la confidentialité et l'intégrité des données échangées.
+
+**Sécurité des Données**
+
+Les données seront stockées de manière sécurisée dans des bases de données sécurisées, avec des mécanismes de sauvegarde et de récupération en place pour protéger contre la perte de données. Des contrôles d'accès basés sur les rôles seront utilisés pour limiter l'accès aux données sensibles.
+
+**Sécurité des Sessions**
+
+Si l'application nécessite la gestion des sessions utilisateur, des mécanismes de gestion des sessions sécurisés seront mis en place pour protéger contre les attaques de session et garantir l'authenticité des utilisateurs.
+
+
+**Gestion des Erreurs**
+
+Les erreurs de l'application seront gérées de manière sécurisée pour éviter les fuites d'informations sensibles. Les messages d'erreur génériques seront utilisés pour ne pas divulguer d'informations sensibles sur le système.
+
+
+
+Tests
+----------------------
+**Tests unitaires**
+
+Une suite de tests unitaires, a été créé pour différentes parties de l'application, notamment les modèles, les vues et les formulaires.
+
+**Modèles**
+
+Ces tests vérifient la création, la modification, et la suppression des objets, ainsi que les relations entre les différents modèles.
+
+**Vues**
+
+Ces tests vérifient le renvoi des bonnes réponses en fonction des requêtes HTTP reçues,
+pour les fonctionnalités telles que l'affichage des données, la création d'objets, la mise à jour et la suppression.
+
+**Formulaires**
+
+testés pour valider les données entrées par l'utilisateur.
+Vérifient que les formulaires acceptent les données valides et rejettent les données invalides, en fonction des contraintes définies dans les modèles.
+
+
+**Couverture de code**
+
+L'outil Pytest permet de lancer les tests unitaires et  de mesurer  la couverture de code testé.
+
+Le rapport de couverture est ici : http://jmba.cloud/datagold_tests/
+
+
+
+Deploiement
+----------------------
+
+**Environnement de production**
+
+Cet environnement doit disposer  de ressources robustes et sécurisées pour garantir la disponibilité et la fiabilité de l'application.
+
+**Infrastructure**
+
+L'infrastructure de déploiement doit être basée sur des serveurs cloud sécurisés, avec des mécanismes de redondance et de sauvegarde pour assurer la disponibilité continue de l'application.
+
+
+Maintenance
+----------------------
+La maintenance de l'application DataGold est un processus continu visant à garantir sa fiabilité, sa sécurité et sa performance tout au long de son cycle de vie.
+
+
+Evolution future
+----------------------
+Voici quelques axes d'évolution envisagé :
+
+    - Amélioration de l'expérience utilisateur
+
+    - Amélioration de l'interface utilisateur et en ajoutant de nouvelles fonctionnalités qui répondent aux besoins de nos utilisateurs.
+
+    - Ajout d'options de personnalisation pour permettre aux utilisateurs d'adapter l'application à leurs besoins spécifiques. Par exemple leur offir la possibilité de configurer des paramètres d'affichages ou le choix des graphiques, de personnaliser les préférences utilisateur et d'ajuster l'interface pour une meilleure adaptabilité.
+
+    - Intégration avec d'autres systèmes telque des plateformes de messagerie, des outils de productivité et d'autres applications tierces.
+
+    - Utilisation des technologies d'intelligence artificielle et d'apprentissage automatique pour offrir des fonctionnalités avancées telles que la  la prédiction des tendences d'achat client et l'automatisation des tâches répétitives.
+
+    - Optimisation des performances et  évolution de l'application pour garantir qu'elle puisse gérer une charge de plus en plus importante tout en maintenant des temps de réponse rapides et une fiabilité élevée.
+
+
+
